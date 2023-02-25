@@ -3,7 +3,7 @@ This layout arranges windows in a recursive grid on the right side of the screen
 
 It uses slightly modified code of AwesomeWM's `spiral` layout.  
 
-![image.png](https://i.imgur.com/tIZ5l09.png)
+![image.png](https://i.imgur.com/HcnrUTB.gif)
 
 ## Installation
 Place `dwindle_reversed.lua` to `~/.config/awesome/layouts`
@@ -16,6 +16,20 @@ awful.layout.layouts = {
     --- Native layouts
     --- ....
     require("layouts.dwindle_reversed")
+}
+```
+
+You can replace native dwindle's arrange func with this one:
+
+```lua
+awful.layout.suit.spiral.dwindle.arrange = require("layouts.dwindle_reversed").arrange
+```
+and then use modified dwindle layout as usual 
+```lua
+awful.layout.layouts = {
+    --- Native layouts
+    --- ....
+    awful.layout.suit.spiral.dwindle
 }
 ```
 
