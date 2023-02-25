@@ -35,3 +35,10 @@ awful.layout.layouts = {
 
 ## Uninstallation
 Remove the file and layout import.
+
+## Alternative solution
+Or you can just add this line
+```lua
+if not awesome.startup then awful.client.setslave(c) end
+``` 
+to the `"manage"` signal handler :D
